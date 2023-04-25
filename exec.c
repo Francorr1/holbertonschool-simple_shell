@@ -28,7 +28,7 @@ int exec(char **args)
 	{
 		do {
 			waitpid(pid, &status, WUNTRACED);
-		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
+		} while (!WIFEXITED(status));
 	}
 
 return (1);
