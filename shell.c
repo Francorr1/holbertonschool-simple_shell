@@ -29,4 +29,19 @@ int main(void)
     } while (status);
 
 	return (EXIT_SUCCESS);
+	do {
+		printf("$ ");
+		bufsize = getline(&lineptr, &n, stdin);
+		if (bufsize == -1)
+		{
+			return (-1);
+		}
+		args = tok_line(lineptr);
+		status = exec(args);
+	} while (status);
+
+	free(lineptr);
+	free(args);
+
+	return (EXIT_SUCCESS);
 }
