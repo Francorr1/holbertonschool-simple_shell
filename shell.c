@@ -19,11 +19,12 @@ int main(void)
             return (-1);
         }
         args = tok_line(lineptr);
+        if (strcmp(args[0], "exit") == 0 && args[1] == NULL)
+        {
+            exit(0);
+        }
         status = exec(args);
     } while (status);
-    
-        free(lineptr);
-        free(args);
 
     return EXIT_SUCCESS;
 }
