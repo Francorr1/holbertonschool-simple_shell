@@ -12,5 +12,6 @@
 char **tok_line(char *line);
 int main(void);
 int exec(char **args);
+void free_grid(char **grid);
 
 #endif

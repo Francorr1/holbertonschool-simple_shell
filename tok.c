@@ -14,7 +14,8 @@ char **tok_line(char *line)
 
 	if (!tokens)
 {
-	fprintf(stderr, "insertar error\n");
+	fprintf(stderr, "Insertar error\n");
+	free_grid(line);
 	exit(EXIT_FAILURE);
 }
 
@@ -28,14 +29,8 @@ while (token != NULL)
 	{
 		bufsize += BUFFER_SIZE;
 		tokens = realloc(tokens, bufsize * sizeof(char *));
-
-if (!tokens)
-{
-	fprintf(stderr, "insertar error\n");
-			exit(EXIT_FAILURE);
-}
-}
-token = strtok(NULL, TOK_DELIMITER);
+	}
+	token = strtok(NULL, TOK_DELIMITER);
 }
 tokens[position] = NULL;
 return (tokens);
