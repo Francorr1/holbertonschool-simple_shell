@@ -33,7 +33,7 @@ $ [program] [argument] [argument] [...]
 ***
 
 ## Flowchart
-[placeholder]
+![image](https://user-images.githubusercontent.com/91033107/234464785-bb5c5c17-4dfa-4b42-8176-619bc66c5ea5.png)
 
 ***
 
