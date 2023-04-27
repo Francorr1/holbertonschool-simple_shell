@@ -15,7 +15,7 @@ char **tok_line(char *line)
 	if (!tokens)
 {
 	fprintf(stderr, "Insertar error\n");
-	free_grid(line);
+	free_grid(&line);
 	exit(EXIT_FAILURE);
 }
 
