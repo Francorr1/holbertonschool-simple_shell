@@ -5,13 +5,13 @@
 */
 void free_grid(char **grid)
 {
-        int height = 0, i;
+	int height = 0, i;
 
-        if (!grid)
-        return;
+	if (!grid)
+		return;
 	for (i = 0; grid[i]; i++)
-        height++;
+		height++;
 	for (i = 0; i < height; i++)
-        free(grid[i]);
+		free(grid[i]);
 	free(grid);
 }
