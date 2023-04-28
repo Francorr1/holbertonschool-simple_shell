@@ -12,9 +12,13 @@ int main(void)
 	char *lineptr;
 	size_t n = 0;
 	ssize_t bufsize;
+	int interactive = isatty(STDIN_FILENO);
 
 	do {
-		printf("$ ");
+		if (interactive == 1)
+		{
+			printf("$ ");
+		}
 		bufsize = getline(&lineptr, &n, stdin);
 		if (bufsize == -1)
 		{
