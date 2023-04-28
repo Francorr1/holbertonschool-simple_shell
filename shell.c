@@ -27,25 +27,15 @@ int main(void)
 		args = tok_line(lineptr);
 		if (strcmp(args[0], "exit") == 0 && args[1] == NULL)
 		{
+			free_grid(args);
 			exit(0);
 		}
 		status = exec(args);
+		free_grid(args);
 	} while (status);
-
-	return (EXIT_SUCCESS);
-	do {
-		printf("$ ");
-		bufsize = getline(&lineptr, &n, stdin);
-		if (bufsize == -1)
-		{
-			return (-1);
-		}
-		args = tok_line(lineptr);
-		status = exec(args);
-	} while (status);
-
+	
 	free(lineptr);
-	free(args);
+	free_grid(args);
 
 	return (EXIT_SUCCESS);
 }
