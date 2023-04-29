@@ -13,5 +13,6 @@ char **tok_line(char *line);
 int main(void);
 int exec(char **args);
 void free_grid(char **grid);
+int _strcmp(char *s1, char *s2);
 
 #endif
