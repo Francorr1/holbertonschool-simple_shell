@@ -28,7 +28,7 @@ int main(void)
 		if (strcmp(args[0], "exit") == 0 && args[1] == NULL)
 		{
 			free_grid(args);
-			exit(0);
+			exit(2);
 		}
 		status = exec(args);
 		free_grid(args);
