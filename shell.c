@@ -31,6 +31,10 @@ int main(void)
 			exit(2);
 		}
 		status = exec(args);
+		if (interactive == 0)
+		{
+			exit(EXIT_SUCCESS);
+		}
 		free_grid(args);
 	} while (status);
 	
