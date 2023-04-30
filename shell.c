@@ -36,7 +36,6 @@ int main(void)
 		free(args);
 		if (interactive == 0)
 		{
-			free_grid(args);
 			free(lineptr);
 			exit(EXIT_SUCCESS);
 		}
