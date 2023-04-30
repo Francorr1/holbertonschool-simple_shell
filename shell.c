@@ -22,22 +22,21 @@ int main(void)
 		bufsize = getline(&lineptr, &n, stdin);
 		if (bufsize == -1)
 		{
+			free(lineptr);
 			return (-1);
 		}
 		args = tok_line(lineptr);
 		if (_strcmp(args[0], "exit") == 0 && args[1] == NULL)
 		{
 			free_grid(args);
+			free(lineptr);
 			exit(2);
 		}
 		status = exec(args);
+		free(args);
 		if (interactive == 0)
 			exit(EXIT_SUCCESS);
-		free_grid(args);
 	} while (status);
-
-	free_grid(args);
-	free(lineptr);
 
 	return (EXIT_SUCCESS);
 }
