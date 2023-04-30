@@ -23,7 +23,7 @@ int main(void)
 		if (bufsize == -1)
 		{
 			free(lineptr);
-			return (-1);
+			return (EXIT_SUCCESS);
 		}
 		args = tok_line(lineptr);
 		if (_strcmp(args[0], "exit") == 0 && args[1] == NULL)
@@ -34,13 +34,12 @@ int main(void)
 		}
 		status = exec(args);
 		free(args);
-	} while (status);
-
-	if (interactive == 0)
+		if (interactive == 0 && bufsize == -1)
 		{
 			free(lineptr);
 			exit(EXIT_SUCCESS);
 		}
+	} while (status);
 
 	return (EXIT_SUCCESS);
 }
