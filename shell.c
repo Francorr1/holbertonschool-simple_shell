@@ -34,12 +34,13 @@ int main(void)
 		}
 		status = exec(args);
 		free(args);
-		if (interactive == 0)
+	} while (status);
+
+	if (interactive == 0)
 		{
 			free(lineptr);
 			exit(EXIT_SUCCESS);
 		}
-	} while (status);
 
 	return (EXIT_SUCCESS);
 }
