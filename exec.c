@@ -16,7 +16,7 @@ int exec(char **args)
 	{
 		if (execvp(args[0], args) == -1)
 		{
-			perror("Insertar error");
+			perror("Execution error");
 			return (-1);
 		}
 	}
