@@ -30,12 +30,16 @@ int main(void)
 		{
 			free_grid(args);
 			free(lineptr);
-			exit(2);
+			exit(EXIT_SUCCESS);
 		}
 		status = exec(args);
 		free(args);
 		if (interactive == 0)
+		{
+			free_grid(args);
+			free(lineptr);
 			exit(EXIT_SUCCESS);
+		}
 	} while (status);
 
 	return (EXIT_SUCCESS);
